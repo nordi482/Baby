@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/material-icons@1.13.8/iconfont/material-icons.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Jost:ital,wght@0,500;1,200&family=Merriweather&family=Nunito+Sans:opsz@6..12&family=Open+Sans:ital,wght@0,300;0,400;1,300&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Jost:ital,wght@0,500;1,200&family=Merriweather&family=Nunito+Sans:opsz@6..12&family=Open+Sans:ital,wght@0,300;0,400;1,300&family=Sriracha&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<style>
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        line-height: 3vh;
+        padding: 2vh;
+    }
+
+    ul,
+    li,
+    a {
+        display: flex;
+        justify-content: space-between;
+        gap: 3vw;
+        text-decoration: none;
+        color: black;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 100;
+    }
+
+    .nav-logo-link {
+        display: flex;
+        justify-content: space-between;
+        gap: 4vw;
+    }
+
+    .nav-logo {
+        margin-left: 2vw;
+        margin-top: 1vh;
+    }
+
+    .nav-search-icon {
+        display: flex;
+        justify-content: space-between;
+        gap: 2vw;
+        margin-right: 1vw;
+
+    }
+
+    .nav-search {
+        display: flex;
+        gap: 0.85vw;
+    }
+
+    input[type=search] {
+        color: #666;
+        padding: 1vh;
+        height: auto;
+        border-width: 1px;
+        border-style: solid;
+        border: 1px solid rgb(204, 204, 204);
+        border-radius: 5px;
+        box-sizing: border-box;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    input[type=search]::placeholder {
+        font-family: 'Open Sans', sans-serif;
+        margin-left: 1vw;
+    }
+
+    .nav-btn {
+        padding: 0.85vw;
+        background-color: rgb(245, 123, 123);
+        border: 1px solid transparent;
+        border-radius: 2px;
+        color: white;
+    }
+
+    .cart-nav {
+        position: relative;
+
+        font-size: 1.65rem;
+    }
+
+    .cart-nav .cart {
+        font-size: 1.2rem;
+    }
+
+    .num {
+        border-radius: 100%;
+        background-color: rgb(245, 123, 123);
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        width: 2vh;
+        height: 2vh;
+        font-size: .65rem;
+        line-height: 2vh;
+        text-align: center;
+        color: #000;
+        right: 0%;
+        bottom:80%;
+    }
+
+    .nav-icons {
+        display: flex;
+        justify-content: space-between;
+        gap: 2vw;
+        align-items: center;
+    }
+
+    .hero {
+        display: flex;
+    }
+
+    .hero-tag {
+        display: flex;
+        align-items: center;
+        font-family: 'Nunito Sans', sans-serif;
+        color: rgb(245, 123, 123);
+        margin-left: 8vw;
+        margin-top: 6vw;
+        
+    }
+
+    .hero-tag-text {
+        color: rgb(245, 123, 123); 
+        margin-left: 1vw; 
+        font-weight: bolder;
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: small;
+    }
+
+    .hero-description {
+        font-family: 'Sriracha', cursive;
+        font-size: 500%;
+        margin-left: 8vw;
+        color: rgb(62,31,85);
+    }
+
+    .hero-descrip-text {
+        margin-left: 8vw;
+        font-size: 110%;
+        font-weight: 100;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    .hero-btn {
+        margin-left: 8vw;
+        padding: 1vw;
+        margin-top: 4vh;
+        width: 150px;
+        border-radius: 2px;
+        border: 1px solid transparent;
+        background-color: rgb(245, 123, 123);
+        color: white;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: bold;
+    }
+
+    .hero-img {
+        width: 90%;
+        margin-left: 3vw;
+    }
+
+    .hero {
+        margin-top: 8vh;
+    }
+
+    /* .cards{
+        width: 100%;
+        align-items: center;
+        padding: 40px 40px 100px;
+        background-color: white;
+        font-weight: 200;
+        font-size: 2rem;
+    } */
+
+    .card {
+        background-image: url(https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-promo-banner-img-1.png);
+    }
+
+    .card-s {
+        background-image: url(https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-promo-banner-img.png);
+    }
+
+    .card-ss {
+        background-image: url(https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-promo-banner-img-3.png);
+    }
+
+    .category {
+        margin-top: 20vh;
+    }
+
+    .cat-heading {
+        font-family: 'Sriracha', cursive;
+        font-size: 300%;
+        color: rgb(62,31,85);
+        text-align: center;
+    }
+
+    .cat-text {
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 1.1rem;
+        font-weight: 200;
+        margin-bottom: 1vh;
+    }
+
+    .cards {
+        width: 100%;
+        padding: 0%;
+    }
+
+    .rows {
+        padding: 4vh 8vw;
+        margin: 0%;
+    }
+
+    .card-title {
+        font-family: 'Sriracha', cursive;
+        font-size: 100%;
+        margin-left: 1vw;
+        color: rgb(62,31,85);
+        margin-bottom: 0%;
+    }
+
+    .price {
+        margin-left: 1vw;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 95%;
+        font-weight: bolder;
+    }
+
+    .ratings {
+        margin-left: 1vw;
+        color: rgb(227, 213, 21);
+        margin-top: 1vh;
+    }
+
+    .card-box {
+        background-color: rgb(253,249,239);
+        position: relative;   
+    }
+
+    .cust-row {
+        padding: 4vh 8vw;
+        margin: 0%;
+    }
+
+    .rate {
+        color: rgb(245,123,123);
+        margin-left: 8vw;
+        position: absolute;
+        top: 22%;
+    }
+
+    .review {
+        font-family: 'Sriracha', cursive;
+        color: rgb(62,31,85);
+        margin-left: 8vw;
+        padding: 0%;
+    }
+
+    .cust-name {
+        font-family: 'Sriracha', cursive;
+        color: rgb(248,165,161);
+        margin-left: 8vw;
+        font-size: 0.90rem;
+        padding-bottom: 2%;
+    }
+
+    .Cust-headline {
+        font-family: 'Sriracha', cursive;
+        font-size: 100%;
+        margin-left: 1vw;
+        color: rgb(62,31,85);
+        margin-bottom: 0%;
+    }
+
+    .cust-image {
+        border-radius: 5%;
+    }
+
+
+    .footer {
+        display: flex;
+        color: rgb(130,130,130);
+        padding: 7vw;
+        background-color: rgb(242,242,242);
+    
+    }
+
+    .socials {
+        display: flex;
+        justify-content: space-between;
+        color: rgb(245,123,123);
+        margin-top: 2vh;
+    }
+
+
+     .links {
+        margin-left: 20vw;
+     }
+</style>
+
+<body>
+
+    <!-- navbar section -->
+
+    <div class="nav">
+
+
+
+        <div class="nav-logo-link">
+
+            <div class="nav-logo">
+                <img src="https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-logo.svg"
+                    alt="imagelo.l">
+            </div>
+
+
+            <div class="nav-links">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <!-- <li><a href="#">About Us</a></li> -->
+                    <!-- <li><a href="#">Testimonial</a></li> -->
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+
+
+        </div>
+
+
+        <div class="nav-search-icon">
+
+            <div class="nav-search">
+                <input type="search" placeholder="Search Products..." class="search-nav browser-default">
+                <button class="nav-btn"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+
+            <div class="nav-icons">
+
+                <div class="cart-nav">
+                    <i class="fa-solid fa-cart-shopping cart"></i>
+                    <span class="num">0</span>
+                </div>
+
+                <div class="user-nav">
+                    <i class="fa-solid fa-user user"></i>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Hero section  -->
+
+
+    <div class="hero">
+
+        <div class="hero-text">
+            <div class="hero-tag">
+                <i class="fa-solid fa-tag"></i>
+                <p class="hero-tag-text">
+                    FLAT 30% OFF + CASHBACK! * </p>
+            </div>
+
+            <h6 class="hero-description">Baby Essential <br> Fashion & Nursery</h6>
+            <p class="hero-descrip-text">Fermentum, cursus ultrices porttitor tincidunt suscipit quam facilisis <br> sit massa pellentesque mi quis elit elementum tristique urna.
+
+                <br>
+                * Enim cras quam et nullam risus nec tincidunt mattis nunc.</p>
+
+                <button class="hero-btn">SHOP NOW</button>
+        </div>
+
+        <div class="hero-image">
+                <img src="https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-hero-baby-img.png" alt="image" class="hero-img">
+        </div>
+
+    </div>
+
+
+    <!-- Selling point section -->
+
+    <!-- <div class="points">
+        <div class="row row-p">
+            <div class="col s4">
+                <div class="cards">
+                    <div class="card">
+                        <p class="card-text">10% OFF</p>
+                        <p class="card-text">Best Choice For Your</p>
+                        <h6 class="cards-text">Princess</h6>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col s4">
+                <div class="cards">
+                    <div class="card-s">
+                        <p class="card-text">20% OFF</p>
+                        <h6 class="cards-text">New Born Essentials</h6>
+                        <p class="cards-descrip">Id neque nunc in tortor nec posuere proin.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col s4">
+                <div class="cards">
+                    <div class="card-ss">
+                        <p class="card-text">20% OFF</p>
+                        <p class="card-text">New Arrival</p>
+                        <h6 class="cards-text">Hot Toys</h6>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+    </div> -->
+
+
+    <!-- New Arrival Section -->
+
+    <div class="category">
+
+        <h6 class="cat-heading">
+            New Arrival
+        </h6>
+
+        <p class="cat-text">
+            Scelerisque duis semper vitae eget mattis viverra sem risus vel suspendisse <br> lorem vestibulum pulvinar habitant sed.
+        </p>
+
+        <div class="row rows">
+            <div class="col s3">
+                <div class="cards">
+                    <img src="https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-12.jpg" alt="image">
+                    <p class="card-title">Extra Soft Touch Lamb Doll</p>
+                    <span class="price">$8.50</span>
+                    <div class="ratings">
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col s3">
+                <div class="cards">
+                    <img src="https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-11.jpg" alt="image">
+                    <p class="card-title">Twin Cute Bunny Set Combo</p>
+                    <span class="price">$40.25</span>
+                    <div class="ratings">
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col s3">
+                <div class="cards">
+                    <img src="https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-10.jpg" alt="image">
+                    <p class="card-title">Colorful Birdies on Orange Bandana</p>
+                    <span class="price">$4.75</span>
+                    <div class="ratings">
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col s3">
+                <div class="cards">
+                    <img src="https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-9.jpg" alt="image">
+                    <p class="card-title">Nutrikids Food Nutrition DHA+ Orange</p>
+                    <span class="price">$6.50</span>
+                    <div class="ratings">
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- category Section -->
+
+    <div class="category">
+
+        <h6 class="cat-heading">
+            Best Seller
+        </h6>
+
+        <p class="cat-text">
+            Scelerisque duis semper vitae eget mattis viverra sem risus vel suspendisse <br> lorem vestibulum pulvinar habitant sed.
+        </p>
+
+        <div class="row rows">
+            <div class="col s3">
+                <div class="cards">
+                    <img src="https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-12.jpg" alt="image">
+                    <p class="card-title">Extra Soft Touch Lamb Doll</p>
+                    <span class="price">$8.50</span>
+                    <div class="ratings">
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col s3">
+                <div class="cards">
+                    <img src="https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-11.jpg" alt="image">
+                    <p class="card-title">Twin Cute Bunny Set Combo</p>
+                    <span class="price">$40.25</span>
+                    <div class="ratings">
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col s3">
+                <div class="cards">
+                    <img src="https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-10.jpg" alt="image">
+                    <p class="card-title">Colorful Birdies on Orange Bandana</p>
+                    <span class="price">$4.75</span>
+                    <div class="ratings">
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col s3">
+                <div class="cards">
+                    <img src="https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-9.jpg" alt="image">
+                    <p class="card-title">Nutrikids Food Nutrition DHA+ Orange</p>
+                    <span class="price">$6.50</span>
+                    <div class="ratings">
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row rows">
+            <div class="col s3">
+                <div class="cards">
+                    <img src="https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-8.jpg" alt="image">
+                    <p class="card-title">Extra Soft Touch Lamb Doll</p>
+                    <span class="price">$8.50</span>
+                    <div class="ratings">
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col s3">
+                <div class="cards">
+                    <img src="https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-7.jpg" alt="image">
+                    <p class="card-title">Sunny Outdoor Picnic Set Yellow</p>
+                    <span class="price">$35.50</span>
+                    <div class="ratings">
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col s3">
+                <div class="cards">
+                    <img src="https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-6.jpg" alt="image">
+                    <p class="card-title">Teddy Bear Ready To Flight Doll</p>
+                    <span class="price">$10.00</span>
+                    <div class="ratings">
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col s3">
+                <div class="cards">
+                    <img src="https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-5.jpg" alt="image">
+                    <p class="card-title">Extra Soft Touch Lamb Doll</p>
+                    <span class="price">$8.50</span>
+                    <div class="ratings">
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Customer Review Section -->
+
+    <div class="cust-review">
+        
+            <h6 class="cat-heading">
+                Why They Love Us
+            </h6>
+
+            <div class="row cust-row">
+                <div class="col s6">
+                    <div class="cards card-box">
+
+                        <img src="https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-reviewer-1.jpg" alt="img" class="cust-image">
+
+                        <div class="rate">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <p class="review">
+                            “Massa amet, at dolor tellus pellentesque aenean in <br> eget massa tincidunt habitasse volutpat adipiscing sed <br> id sit auctor eu vivamus nulla.”
+                        </p>
+
+                        <p class="cust-name">
+                            EMMA HART
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="col s6">
+                    <div class="cards card-box">
+
+                        <img src="https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-reviewer-2.jpg" alt="img" class="cust-image">
+
+                        <div class="rate">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <p class="review">
+                            “Malesuada eu mattis fermentum etiam arcu risus <br> lacus velit neque mi integer tincidunt sociis enim <br> gravida in pellentesque cursus sed.”
+                        </p>
+
+                        <p class="cust-name">
+                            DIANNA JOHNSON
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+
+
+    <!-- Footer styling Section -->
+
+    <div class="footer">
+        <div class="logo">
+            <img src="https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-logo.svg" alt="footer-img" class="footer-logo">
+            <p class="address">123 Fifth Ave, New York, NY 12004.</p>
+            <p class="phone">+1 123 456 78 90</p>
+            <p class="email">mail@example.com</p>
+            <div class="socials">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <p class="links">Home</p>
+            <p class="links">Account</p>
+            <p class="links">About</p>
+            <p class="links">Categories</p>
+            <p class="links">Shop</p>
+        </div>
+    </div>
+
+</body>
+
+</html>
